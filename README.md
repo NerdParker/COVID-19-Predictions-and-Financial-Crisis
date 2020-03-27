@@ -15,19 +15,27 @@ The initial data cleaning and exploration can be found in `Covid-19 People & Sym
 
 Dataset: (https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset)
 1. This dataset contains time series data on the number of confirmed, deaths and recovered COVID-19 cases. After some general cleaning on the "line list" data looks like this:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/line_list_data.PNG)
 
+
 2. Looking for correlations in the numerical variables I ran a pair plot:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/line_list_pairwise.png)
 
 We can see that the virus infects all age ranges but almost all deaths are older individuals:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/line_list_age_death.PNG)
 
+
 3. Further cleaning of the "line list" data specifically looking at the patient summary we have:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/line_list_patient_summary.PNG)
+
 
 4. Next, I cleaned the summaries by removing punctuation and digits. I left the pronouns, lemmatized the rest to remove the stop words and then joined them back together. 
 A wordcloud of the results is below:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/line_list_wordcloud.png)
 
 The wordcloud reveals that the top words are confirm, covid, patient, new, symptom, male, onset, female, wuhan, fever, pneumonia etc. We can see this further with a bar chart. 
@@ -36,6 +44,7 @@ I used matplotlib and seaborn to visualize the top occurring words post cleaning
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/line_list_topwords.png)
 
 I visualized the top symptoms:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/line_list_topsymptoms.png)
 
 I recreated a similar visual with interactivity in Tableau that...:
@@ -55,37 +64,49 @@ The case review summary sentiment analysis work can be found in `Covid-19 People
 The time series data and forecasting work can be found in `Covid-19 Time Series and Prediction Practicum.ipynb` in the `Jupyter Notebooks` folder as well as the respective python files in the `Python files` folder.
 
 1. This dataset contains time series data on the number of confirmed, deaths and recovered COVID-19 cases. After some general cleaning on the "covid_19_data" file our output looks like this:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_data.PNG)
 
 A good deal of further cleaning went into the "time_series_covid_19_confirmed", "..deaths" and "..recovered" data files as well which hold critical time series data as they track the outbreak results over-time. 
 
+
 2. A plot of the reported cases by country is below:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_reported_cases.PNG)
 
 This plot shows that China, the United States, Australia, Canada and France have the most reported cases as of the last iteration.
 
 
 3. I created an interactive plotly stacked barchart that shows the total reported cases over time and the number who have recovered or died. 
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_total_stacked.png)
 
 (insert method of linking to interactive plot outside of the jupyter notebook?)
 This plot shows that the number of cases is increasing greatly and is up to over 350k but many patients recover.
 
+
 4. An interactive geo scatter plot using plotly depicts the top reported cases overlaid on their countries and sized by the number of total cases:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_geoscatter.PNG)
 
 This plot shows that China has the most reported cases at 81k as of the last iteration.
 
+
 5. Forecasts were made using FbProphet to model the virus's upcoming outlook, the confirmed cases forecast is below:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_forecast_confirmed.png)
 
 The deaths forecast:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_forecast_deaths.png)
 
 The recovered cases forecast:
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_forecast_recovered.png)
 
+
 6. The final step was to forecast the next five days of new cases, deaths and recoveries for each country, region, state and province. Again, using Fbprophet and a couple of loops we are able to model each location and combine them back into one forecast. A portion of the results for can be seen below showing the forecast for New South Wales in Australia. 
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_forecast_results.PNG)
 
 The Mean Absolute Error for this prediction was 70.9.
