@@ -125,13 +125,13 @@ A plot of this five year data:
 
 We can see an upward trend over the past five years in Google stock and then a significant dip over the last couple months likely due to COVID-19.
 
-Google stock five year returns:
+Google stock five-year returns:
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_5year_returns.PNG)
 
 Google stock returns have spiked negatively the most in the past five years down to -10% during the COVID-19 outbreak and appears quite volatile.
 
-2. To examine if this is a trend accross large technology companies other major companies stock information is brought in from Yahoo Finance API:
+2. To examine if this is a trend across large technology companies other major companies stock information is brought in from Yahoo Finance API:
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_data.PNG)
 
@@ -183,11 +183,11 @@ Just 2020 data expected returns:
 
 We can see here that only Microsoft has positive expected returns and low risk while each of the other major tech companies have expected losses. 
 
-Finally we have the tech companies forecasted stock prices:
+Finally, we have the tech companies forecasted stock prices:
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_forecast.PNG)
 
-The stocks are expected to recover. I did not run another forecast on just this years data as I don't believe it is enough to forecast on. I also suspect it would not be trsutworthy as this would likely not suggest recovery being possible but logically if COVID-19 eventually allows for business to resume as usual the market should begin an upward trend again. 
+The stocks are expected to recover. I did not run another forecast on just this years data as I don't believe it is enough to forecast on. I also suspect it would not be trustworthy as this would likely not suggest recovery being possible but logically if COVID-19 eventually allows for business to resume as usual the market should begin an upward trend again. 
 
 
 
