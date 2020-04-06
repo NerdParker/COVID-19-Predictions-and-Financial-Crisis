@@ -121,7 +121,7 @@ The financial data analysis and forecasting work can be found in `Yahoo Finance 
 
 A plot of this five year data:
 
-![alt text](![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_data.PNG)
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_data.PNG)
 
 We can see an upward trend over the past five years in Google stock and then a significant dip over the last couple months likely due to COVID-19.
 
@@ -135,9 +135,11 @@ Google stock returns have spiked negatively the most in the past five years down
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_data.PNG)
 
+
 A correlation plot shows similarity between the companies:
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_correlation.PNG)
+
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_correlation_plot.PNG)
 
@@ -145,12 +147,53 @@ A scatter of the five years of Google and Microsoft stocks shows slightly above 
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_data.PNG)
 
+
 3. The same data but only focusing on 2020. Google stocks this year:
 
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_6month.PNG)
 
-4. Forecast
+The stock has greatly declined since February. 
+
+Google returns this year:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_6month_returns.PNG)
+
+
+We can see that most days have a negative return since the end of February. 
+
+Comparing Google and Microsoft only during the past 6 months we see many negative returns and some that are quite high including -15%.
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_vs_microsoft_6month.PNG)
+
+Correlations between the companies are even higher now suggesting an across the board decline:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_correlation_plot_6month.PNG)
+
+4. Forecasting major tech companies financial capability:
+
+Past five years expected returns:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_scatter_plot.PNG)
+
+GE and IBM have negative expected returns while the other major tech companies are positive with Microsoft having the highest expected return. (Possibly due to being awarded the JEDI contract.)
+
+Just 2020 data expected returns:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_scatter_plot_6month.PNG)
+
+We can see here that only Microsoft has positive expected returns and low risk while each of the other major tech companies have expected losses. 
+
+Finally we have the tech companies forecasted stock prices:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_forecast.PNG)
+
+The stocks are expected to recover. I did not run another forecast on just this years data as I don't believe it is enough to forecast on. I also suspect it would not be trsutworthy as this would likely not suggest recovery being possible but logically if COVID-19 eventually allows for business to resume as usual the market should begin an upward trend again. 
+
+
 
 ### Future Work
-
+Additional visualizations and dashboards. 
+Financial data for other industries.
+Other Forecasting methods.
 
 
