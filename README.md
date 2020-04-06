@@ -5,7 +5,7 @@ This project is a work in progress but is meant to be a time series analysis and
 1. Data Exploration and Cleaning
 2. Case Review Summary Sentiment Analysis
 3. Time Series Data Exploration and Forecasting
-4. Financial Data Analysis and Predictions
+4. Financial Data Analysis and Forecasting
 5. Future Work
 
 ### Data Exploration and Cleaning:
@@ -112,9 +112,43 @@ The recovered cases forecast:
 The Mean Absolute Error for this prediction was 70.9.
 
 
-### Financial Data Analysis and Predictions
+### Financial Data Analysis and Forecasting
+The financial data analysis and forecasting work can be found in `Yahoo Finance API Data Practicum.ipynb` in the `Jupyter Notebooks` folder as well as the respective python files in the `Python files` folder.
+
+1. This notebook accessed the Yahoo Finance Data API which contains time series data on company stocks. The Google data for the last five years looks like this:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_data.PNG)
+
+A plot of this five year data:
+
+![alt text](![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_data.PNG)
+
+We can see an upward trend over the past five years in Google stock and then a significant dip over the last couple months likely due to COVID-19.
+
+Google stock five year returns:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_5year_returns.PNG)
+
+Google stock returns have spiked negatively the most in the past five years down to -10% during the COVID-19 outbreak and appears quite volatile.
+
+2. To examine if this is a trend accross large technology companies other major companies stock information is brought in from Yahoo Finance API:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_data.PNG)
+
+A correlation plot shows similarity between the companies:
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_correlation.PNG)
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_correlation_plot.PNG)
+
+A scatter of the five years of Google and Microsoft stocks shows slightly above average returns with more high return days than low. 
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_data.PNG)
+
+3. The same data but only focusing on 2020. Google stocks this year:
 
 
+4. Forecast
 
 ### Future Work
 
