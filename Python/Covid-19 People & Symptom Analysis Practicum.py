@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[40]:
+# In[1]:
 
 
 # packages to store and manipulate data
@@ -255,7 +255,7 @@ data = df_sum.summary.values.tolist()
 
 data = clean_text(data)
 
-clean_summary = data
+clean_notes = data
 
 
 # In[19]:
@@ -410,19 +410,11 @@ nb = textblob.en.sentiments.NaiveBayesAnalyzer()
 nb.analyze(df_sum.clean[0])
 
 
-# In[42]:
+# In[31]:
 
 
-# rule based method for sentiment analysis
-analyzer = SentimentIntensityAnalyzer()
-analyzer.polarity_scores(df_sum.clean[0])
-
-
-# In[43]:
-
-
-def sentiment_score(clean_summary):
-    score = analyzer.polarity_scores(clean_summary)
+def sentiment_score(clean_notes):
+    score = analyzer.polarity_scores(clean_notes)
     weight = score['compound']
     if weight >= 0.1:
         return 1
@@ -432,32 +424,13 @@ def sentiment_score(clean_summary):
         return -1
 
 
-# In[44]:
-
-
-sentiment_score(df_sum.clean[0])
-
-
-# In[46]:
+# In[32]:
 
 
 df_sum.head()
 
 
-# In[53]:
-
-
-sent = [TextBlob(summary) for summary in clean_summary]
-sent[0].polarity, sent[0]
-
-val_sentiment = [[summary.sentiment.polarity, str(summary)] for summary in sent]
-val_sentiment[0]
-
-df_sentiment = sum.DataFrame(val_sentiment, columns=["polarity", "clean_summary"])
-df_sentiment.head()
-
-
-# In[ ]:
+# In[33]:
 
 
 from sklearn.feature_extraction.text import CountVectorizer
@@ -465,6 +438,23 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style('whitegrid')
 get_ipython().run_line_magic('matplotlib', 'inline')
+
+
+# In[38]:
+
+
+sent = [TextBlob(notes) for notes in clean_notes]
+sent[0].polarity, sent[0]
+
+val_sentiment = [[notes.sentiment.polarity, str(notes)] for notes in sent]
+val_sentiment[0]
+
+df_sentiment = pd.DataFrame(val_sentiment, columns=["polarity", "clean_notes"])
+df_sentiment.head()
+
+
+# In[39]:
+
 
 fig, ax = plt.subplots(figsize=(10, 7))
 
@@ -477,7 +467,7 @@ plt.ylabel("Number of Summaries")
 plt.show()
 
 
-# In[ ]:
+# In[40]:
 
 
 summary = df1.filter(['summary','country','gender','age','death','recovered'], axis=1)
