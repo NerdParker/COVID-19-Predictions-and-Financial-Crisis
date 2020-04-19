@@ -1,5 +1,10 @@
-# COVID-19-Predictions-and-Financial-Crisis
+# COVID-19-Predictions-and-Financial-Crisis-Summary
 This project is a work in progress but is meant to be a time series analysis and prediction of the spread of COVID-19 and the financial impact it has had. 
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_WorldMap.PNG)
+
+
+### For a more indepth look at the project and findings, see below:
 
 ### Contents:
 1. Data Exploration and Cleaning
