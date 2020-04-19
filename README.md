@@ -1,7 +1,13 @@
 # COVID-19-Predictions-and-Financial-Crisis-Summary
 This project is a work in progress but is meant to be a time series analysis and prediction of the spread of COVID-19 and the financial impact it has had. 
 
+The below interactive plot shows the spread of the virus over the past few months.
+
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_WorldMap.PNG)
+
+Stock prices have taken a dive as we see here with large tech companies but are forecasted to return to their previous positions. Some industries may never recover.
+
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_forecast.PNG)
 
 
 ### For a more indepth look at the project and findings, see below:
