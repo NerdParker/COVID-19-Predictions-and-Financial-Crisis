@@ -93,7 +93,7 @@ This plot shows that China has the most reported cases at 81k as of the last ite
 
 5. An interactive geo scatter plot using plotly depicts the top reported cases overlaid on their countries and sized by the number of total cases with the addition of showing the outbreak spread over time:
 
-https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_WorldMap.PNG
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_WorldMap.PNG)
 
 
 6. Forecasts were made using FbProphet to model the virus's upcoming outlook, the confirmed cases forecast is below:
