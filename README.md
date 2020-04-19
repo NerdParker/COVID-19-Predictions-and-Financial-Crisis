@@ -91,8 +91,12 @@ This plot shows that the number of cases is increasing greatly and is up to over
 
 This plot shows that China has the most reported cases at 81k as of the last iteration.
 
+5. An interactive geo scatter plot using plotly depicts the top reported cases overlaid on their countries and sized by the number of total cases with the addition of showing the outbreak spread over time:
 
-5. Forecasts were made using FbProphet to model the virus's upcoming outlook, the confirmed cases forecast is below:
+https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_WorldMap.PNG
+
+
+6. Forecasts were made using FbProphet to model the virus's upcoming outlook, the confirmed cases forecast is below:
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_forecast_confirmed.png)
 
@@ -105,7 +109,7 @@ The recovered cases forecast:
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_forecast_recovered.png)
 
 
-6. The final step was to forecast the next five days of new cases, deaths and recoveries for each country, region, state and province. Again, using Fbprophet and a couple of loops we are able to model each location and combine them back into one forecast. A portion of the results for can be seen below showing the forecast for New South Wales in Australia. 
+7. The final step was to forecast the next five days of new cases, deaths and recoveries for each country, region, state and province. Again, using Fbprophet and a couple of loops we are able to model each location and combine them back into one forecast. A portion of the results for can be seen below showing the forecast for New South Wales in Australia. 
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_forecast_results.PNG)
 
