@@ -63,9 +63,6 @@ I visualized the top symptoms:
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/line_list_topsymptoms.png)
 
-I recreated a similar visual with interactivity in Tableau that...:
-...TBD
-
 
 
 ### Case Review Summary Sentiment Analysis:
@@ -73,7 +70,9 @@ The case review summary sentiment analysis work can be found in `Covid-19 People
 
 1. In addition to previous text cleaning bi-gram and tri-gram models were made and lemmatized for the text cleaning. TextBlob was used to determine the sentiment of the summaries and the results plotted below:
 
-...problem with final plot at the moment
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/sentiment_patient_summary.png)
+
+The sentiment of the summaries is actually slightly positive overall.
 
 
 ### Time Series Data Exploration and Forecasting
