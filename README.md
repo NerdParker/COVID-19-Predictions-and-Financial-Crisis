@@ -144,7 +144,7 @@ The financial data analysis and forecasting work can be found in `Yahoo Finance 
 
 A plot of this five year data:
 
-![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_data.PNG)
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_google_5year.PNG)
 
 We can see an upward trend over the past five years in Google stock and then a significant dip over the last couple months likely due to COVID-19.
 
