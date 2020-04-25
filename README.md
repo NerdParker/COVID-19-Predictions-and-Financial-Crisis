@@ -218,5 +218,3 @@ The stocks are expected to recover. I did not run another forecast on just this 
 Additional visualizations and dashboards. 
 Financial data for other industries.
 Other Forecasting methods.
-
-
