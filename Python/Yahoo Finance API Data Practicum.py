@@ -37,7 +37,7 @@ import matplotlib as mpl
 
 # setting the timeframe for our data
 past = datetime.datetime(2015, 1, 1)
-present = datetime.datetime(2020, 4, 5)
+present = datetime.datetime(2020, 4, 25)
 
 # Yahoo API google finance data
 google = data.DataReader("GOOG", 'yahoo', start=past, end=present)
@@ -147,16 +147,29 @@ dfFeat['PCT_change'] = (google['Close'] - google['Open']) / google['Open'] * 100
 # In[14]:
 
 
-dfFeat.fillna(value=-99999, inplace=True)
-# forecasting 5% of data and predicting the AdjCllose
-forecast_col = 'Adj Close'
-forecast_out = int(math.ceil(0.05 * len(dfFeat)))
-dfFeat['label'] = dfFeat[forecast_col].shift(-forecast_out)
-dfFeat.dropna(inplace=True)
-dfFeat.head()
+dfFeat.tail()
 
 
 # In[15]:
+
+
+dfFeat.fillna(value=-99999, inplace=True)
+# forecasting 20% of data and predicting the AdjCllose
+forecast_col = 'Adj Close'
+forecast_out = int(math.ceil(0.2 * len(dfFeat)))
+dfFeat['label'] = dfFeat[forecast_col].shift(forecast_out)
+dfFeat_noDrop = dfFeat
+dfFeat.dropna(inplace=True)
+dfFeat.tail()
+
+
+# In[16]:
+
+
+forecast_out
+
+
+# In[17]:
 
 
 X = np.array(dfFeat.drop(['label'],1))
@@ -166,13 +179,13 @@ X_late = X[-forecast_out:]
 y = np.array(dfFeat['label'])
 
 
-# In[16]:
+# In[18]:
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.15, random_state=2)
 
 
-# In[17]:
+# In[19]:
 
 
 # Linear regression
@@ -185,7 +198,7 @@ accuracy = linearReg.score(X_test, y_test)
 print("Prediction Accuracy: %.1f%%" % (accuracy * 100.0))
 
 
-# In[18]:
+# In[20]:
 
 
 # KNN Regression
@@ -198,14 +211,26 @@ accuracy = knnReg.score(X_test, y_test)
 print("Prediction Accuracy: %.1f%%" % (accuracy * 100.0))
 
 
-# In[19]:
+# In[21]:
 
 
 forecastStock = linearReg.predict(X_late)
 dfFeat['Forecast'] = np.nan
 
 
-# In[20]:
+# In[22]:
+
+
+dfFeat.tail()
+
+
+# In[23]:
+
+
+dfFeat.iloc[-1].name
+
+
+# In[24]:
 
 
 dateRecent = dfFeat.iloc[-1].name
@@ -223,19 +248,19 @@ plt.ylabel('Price')
 plt.show()
 
 
-# In[21]:
+# In[25]:
 
 
 # setting the timeframe for our data gathering
 past = datetime.datetime(2020, 1, 1)
-present = datetime.datetime(2020, 4, 5)
+present = datetime.datetime(2020, 4, 25)
 
 # Yahoo API google finance data
 google = data.DataReader("GOOG", 'yahoo', start=past, end=present)
 google.tail()
 
 
-# In[22]:
+# In[26]:
 
 
 # moving average mean of closing data for past 6 months
@@ -243,7 +268,7 @@ googleClose = google['Adj Close']
 avgMean = googleClose.rolling(window=180).mean()
 
 
-# In[23]:
+# In[27]:
 
 
 # matplotlib plot of Google data
@@ -257,7 +282,7 @@ avgMean.plot(label='avgMean')
 plt.legend()
 
 
-# In[24]:
+# In[28]:
 
 
 # returns
@@ -265,21 +290,21 @@ returns = googleClose / googleClose.shift(1) - 1
 returns.plot(label='return')
 
 
-# In[25]:
+# In[29]:
 
 
 df = data.DataReader(['AAPL', 'GE', 'GOOG', 'IBM', 'MSFT'],'yahoo',start=past,end=present)
 df.tail()
 
 
-# In[26]:
+# In[30]:
 
 
 df = data.DataReader(['AAPL', 'GE', 'GOOG', 'IBM', 'MSFT'],'yahoo',start=past,end=present)['Adj Close']
 df.tail()
 
 
-# In[27]:
+# In[31]:
 
 
 # correlation plot
@@ -288,7 +313,7 @@ corr = correlation.corr()
 corr
 
 
-# In[28]:
+# In[32]:
 
 
 plt.scatter(correlation.GOOG, correlation.MSFT)
@@ -296,7 +321,7 @@ plt.xlabel('Google Returns')
 plt.ylabel('Microsoft Returns')
 
 
-# In[29]:
+# In[33]:
 
 
 plt.imshow(corr, cmap='hot', interpolation='none')
@@ -305,7 +330,7 @@ plt.xticks(range(len(corr)), corr.columns)
 plt.yticks(range(len(corr)), corr.columns);
 
 
-# In[30]:
+# In[34]:
 
 
 plt.scatter(correlation.mean(), correlation.std())
@@ -318,4 +343,16 @@ for label, x, y in zip(correlation.columns, correlation.mean(), correlation.std(
         textcoords = 'offset points', ha = 'right', va = 'bottom',
         bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),
         arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 

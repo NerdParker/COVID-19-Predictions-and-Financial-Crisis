@@ -17,6 +17,8 @@ nlp = spacy.load("en_core_web_sm")
 import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
+import plotly.offline as py
+py.init_notebook_mode(connected=True)
 import plotly.graph_objects as graphO
 from fbprophet import Prophet
 import pycountry
@@ -27,7 +29,7 @@ import pycountry
 # In[2]:
 
 
-# Import Time-series Dataset, Last Updated on 3/20/2020
+# Import Time-series Dataset, Last Updated on 4/25/2020
 # Kaggle COVID Datasource: https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset
 
 # this file is the same data as in df1 but with case numbers and no lat/long
@@ -189,7 +191,25 @@ fig = px.scatter_geo(plot_map,
 fig.show()
 
 
-# In[16]:
+# In[18]:
+
+
+df_timeSeries = df.groupby(['Date', 'Country/Region'])['Confirmed', 'Deaths', 'Recovered'].max()
+df_timeSeries = df_timeSeries.reset_index()
+df_timeSeries['Date'] = pd.to_datetime(df_timeSeries['Date'])
+df_timeSeries['Date'] = df_timeSeries['Date'].dt.strftime('%m/%d/%Y')
+df_timeSeries['size'] = df_timeSeries['Confirmed'].pow(0.3)
+
+fig = px.scatter_geo(df_timeSeries, locations="Country/Region", locationmode='country names', 
+                     color="Confirmed", size='size', hover_name="Country/Region", 
+                     range_color= [0, max(df_timeSeries['Confirmed'])+2], 
+                     projection="natural earth", animation_frame="Date", 
+                     title='COVID-19 Cases Overtime')
+fig.update(layout_coloraxis_showscale=True)
+py.offline.iplot(fig)
+
+
+# In[19]:
 
 
 df_confirmed = df.groupby('Date').sum()['Confirmed'].reset_index()
@@ -198,7 +218,7 @@ df_deaths = df.groupby('Date').sum()['Deaths'].reset_index()
 df_confirmed.head()
 
 
-# In[17]:
+# In[20]:
 
 
 # fix the date
@@ -206,14 +226,14 @@ df_confirmed['Date'] = pd.to_datetime(df_confirmed['Date'])
 df_confirmed.head()
 
 
-# In[18]:
+# In[21]:
 
 
 # columns must have these names to use Prophet to forecast
 df_confirmed.columns = ['ds','y']
 
 
-# In[19]:
+# In[22]:
 
 
 # forecasting model at 98% prediction intervals
@@ -225,7 +245,7 @@ forecastPred = model.predict(modPred)
 df_confirmed_forecast = model.plot(forecastPred)
 
 
-# In[20]:
+# In[23]:
 
 
 # fix the date
@@ -242,7 +262,7 @@ forecastPred = model.predict(modPred)
 df_deaths_forecast = model.plot(forecastPred)
 
 
-# In[21]:
+# In[24]:
 
 
 # fix the date
@@ -256,23 +276,23 @@ model.fit(df_recovered)
 
 modPred = model.make_future_dataframe(periods=8)
 forecastPred = model.predict(modPred)
-df_deaths_forecast = model.plot(forecastPred)
+df_recovered_forecast = model.plot(forecastPred)
 
 
-# In[22]:
+# In[25]:
 
 
 df.head()
 
 
-# In[23]:
+# In[26]:
 
 
 forecast5days = 5
 sortDate = sorted(list(set(df['Date'].values)))[-forecast5days]
 
 
-# In[24]:
+# In[27]:
 
 
 # using the split dataset from earlier df_map
@@ -281,13 +301,13 @@ df_deaths = df_map[['SNo', 'Date','Province/State', 'Country/Region', 'Deaths']]
 df_recovered = df_map[['SNo', 'Date','Province/State', 'Country/Region', 'Recovered']]
 
 
-# In[25]:
+# In[28]:
 
 
 df_confirmed.head()
 
 
-# In[26]:
+# In[29]:
 
 
 # my own take but major credit and inspiration from khonongweihoo on Kaggle 
@@ -359,7 +379,7 @@ for country in countryUnique:
         continue
 
 
-# In[34]:
+# In[30]:
 
 
 # concatenate the dataframes into one
