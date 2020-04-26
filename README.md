@@ -2,7 +2,7 @@
 This project is a work in progress but is meant to be a time series analysis and prediction of the spread of COVID-19 and the financial impact it has had. 
 
 ### Summary:
-The below interactive plot shows the spread of the virus over the past few months. (last updated 3/20/2020)
+The below interactive plot shows the spread of the virus over the past few months. (last updated 4/25/2020)
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_WorldMap2.PNG)
 
