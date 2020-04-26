@@ -4,7 +4,7 @@ This project is a work in progress but is meant to be a time series analysis and
 ### Summary:
 The below interactive plot shows the spread of the virus over the past few months. (last updated 3/20/2020)
 
-![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_WorldMap.PNG)
+![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_WorldMap2.PNG)
 
 Future deaths, recoveries and confirmed cases were forecasted based on current trends and modeled. Below is a graph of the forecasted confirmed cases.
 
