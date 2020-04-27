@@ -6,7 +6,7 @@ The below interactive plot shows the spread of the virus over the past few month
 
 ![COVID-19 Confirmed Cases Spread](https://user-images.githubusercontent.com/40338216/80321340-54060880-87ea-11ea-8410-1451612b912e.gif)
 
-Future deaths, recoveries and confirmed cases were forecasted based on current trends and modeled. Below is a graph of the forecasted confirmed cases.
+Future deaths, recoveries and confirmed cases were forecasted based on current trends and modeled. Below is a graph of the forecasted confirmed cases. The initial exponential growth has subsided to linear growth.
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/time_series_forecast_confirmed.png)
 
