@@ -1,5 +1,9 @@
 # COVID-19-Predictions-and-Financial-Crisis
-This project is a work in progress but is meant to be a time series analysis and prediction of the spread of COVID-19 and the financial impact it has had. For a video presentation: https://youtu.be/C3qMzDXyIaU
+This project is a time series analysis and prediction of the spread of COVID-19 and the financial impact it has had. For a video presentation: https://youtu.be/C3qMzDXyIaU
+
+COVID-19 is a corona virus causing respiratory illness believed to have originated in Wuhan China and brought to the World Health Organizations attention on December 31st of 2019. Person to person spread is occurring at a rapid rate and has since been slowed somewhat by quarantine. 
+This quarantine has had a dramatic impact on the financial market as many people and industries are unable to function in a work at home world riddled with travel bans. 
+This project will tackle an analysis of the virus symptoms, doctor sentiment, who is at risk, geographic spread, total cases and their outcomes and the financial impact it has had on large tech companies. 
 
 ### Summary:
 The below interactive plot shows the spread of the virus over the past few months. (last updated 4/25/2020)
@@ -14,6 +18,9 @@ Stock prices have taken a dive as we see here with large tech companies but are 
 
 ![alt text](https://github.com/NerdParker/COVID-19-Predictions-and-Financial-Crisis/blob/master/Images/yahoo_finance_techcomp_forecast.PNG)
 
+In conclusion the main symptoms are fever, cough and sore throat. The initial exponential spread is down to linear growth and expected to continue in the short term. U.S. and China have reported the most cases. Individual regions and provinces can be tracked to help determine when quarantine might be lifted and where additional medical support is most needed. 
+Large tech companies have taken a big financial hit but are expected to make a decent recovery by the end of the year. 
+
 
 ### For a more indepth look at the project and findings, see below:
 
@@ -22,7 +29,8 @@ Stock prices have taken a dive as we see here with large tech companies but are 
 2. Case Review Summary Sentiment Analysis
 3. Time Series Data Exploration and Forecasting
 4. Financial Data Analysis and Forecasting
-5. Future Work
+5. Conclusions
+6. Future Work
 
 ### Data Exploration and Cleaning:
 All the data files can be found in the "Data" folder.
@@ -212,6 +220,10 @@ Finally, we have the tech companies forecasted stock prices:
 
 The stocks are expected to recover. I did not run another forecast on just this years data as I don't believe it is enough to forecast on. I also suspect it would not be trustworthy as this would likely not suggest recovery being possible but logically if COVID-19 eventually allows for business to resume as usual the market should begin an upward trend again. 
 
+
+### Conclusions
+The main symptoms are fever, cough and sore throat. The initial exponential spread is down to linear growth and expected to continue in the short term. U.S. and China have reported the most cases. Individual regions and provinces can be tracked to help determine when quarantine might be lifted and where additional medical support is most needed. 
+Large tech companies have taken a big financial hit but are expected to make a decent recovery by the end of the year. 
 
 
 ### Future Work
