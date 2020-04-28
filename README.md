@@ -1,5 +1,5 @@
 # COVID-19-Predictions-and-Financial-Crisis
-This project is a work in progress but is meant to be a time series analysis and prediction of the spread of COVID-19 and the financial impact it has had. 
+This project is a work in progress but is meant to be a time series analysis and prediction of the spread of COVID-19 and the financial impact it has had. For a video presentation: https://youtu.be/C3qMzDXyIaU
 
 ### Summary:
 The below interactive plot shows the spread of the virus over the past few months. (last updated 4/25/2020)
